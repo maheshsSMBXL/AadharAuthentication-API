@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "TN2BnVHRZm12qDdPvlGcaSQWR/9dVPIT8y5rTvVGrog=",
+  "Source": "AadharVerification",
+  "BasePath": "_content/AadharVerification",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
