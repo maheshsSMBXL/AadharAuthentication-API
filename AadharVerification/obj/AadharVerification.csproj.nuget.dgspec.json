@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MAHESH\\source\\repos\\AadharVerification\\AadharVerification\\AadharVerification.csproj": {}
+    "C:\\Users\\MAHESH\\source\\repos\\AadharAuthentication-API\\AadharVerification\\AadharVerification.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MAHESH\\source\\repos\\AadharVerification\\AadharVerification\\AadharVerification.csproj": {
+    "C:\\Users\\MAHESH\\source\\repos\\AadharAuthentication-API\\AadharVerification\\AadharVerification.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MAHESH\\source\\repos\\AadharVerification\\AadharVerification\\AadharVerification.csproj",
+        "projectUniqueName": "C:\\Users\\MAHESH\\source\\repos\\AadharAuthentication-API\\AadharVerification\\AadharVerification.csproj",
         "projectName": "AadharVerification",
-        "projectPath": "C:\\Users\\MAHESH\\source\\repos\\AadharVerification\\AadharVerification\\AadharVerification.csproj",
+        "projectPath": "C:\\Users\\MAHESH\\source\\repos\\AadharAuthentication-API\\AadharVerification\\AadharVerification.csproj",
         "packagesPath": "C:\\Users\\MAHESH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MAHESH\\source\\repos\\AadharVerification\\AadharVerification\\obj\\",
+        "outputPath": "C:\\Users\\MAHESH\\source\\repos\\AadharAuthentication-API\\AadharVerification\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MAHESH\\AppData\\Roaming\\NuGet\\NuGet.Config",
