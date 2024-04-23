@@ -12,7 +12,6 @@ namespace AadharVerification.Controllers
         [HttpPost("ImageToBase64")]
         public void ImageToBase64(IFormFile file) 
         {
-
             if (file.Length > 0)
             {
                 using (var ms = new MemoryStream())
