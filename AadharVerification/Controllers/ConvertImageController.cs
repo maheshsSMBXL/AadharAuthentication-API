@@ -20,7 +20,6 @@ namespace AadharVerification.Controllers
                     file.CopyTo(ms);
                     byte[] fileByte = ms.ToArray();
                     string Base64 = Convert.ToBase64String(fileByte);
-                    //vamshi
                 }
             }                      
         }
