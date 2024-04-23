@@ -224,19 +224,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MAHESH\\.nuget\\packages\\": {}
+    "C:\\Users\\Vamshi Krishna\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MAHESH\\source\\repos\\AadharVerification\\AadharVerification\\AadharVerification.csproj",
+      "projectUniqueName": "C:\\Users\\Vamshi Krishna\\source\\repos\\AadharAuthentication-API\\AadharVerification\\AadharVerification.csproj",
       "projectName": "AadharVerification",
-      "projectPath": "C:\\Users\\MAHESH\\source\\repos\\AadharVerification\\AadharVerification\\AadharVerification.csproj",
-      "packagesPath": "C:\\Users\\MAHESH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MAHESH\\source\\repos\\AadharVerification\\AadharVerification\\obj\\",
+      "projectPath": "C:\\Users\\Vamshi Krishna\\source\\repos\\AadharAuthentication-API\\AadharVerification\\AadharVerification.csproj",
+      "packagesPath": "C:\\Users\\Vamshi Krishna\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vamshi Krishna\\source\\repos\\AadharAuthentication-API\\AadharVerification\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\MAHESH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vamshi Krishna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -244,6 +249,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -286,7 +292,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
