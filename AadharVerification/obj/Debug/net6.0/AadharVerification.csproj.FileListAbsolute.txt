@@ -63,3 +63,36 @@ C:\Users\Vamshi Krishna\source\repos\AadharAuthentication-API\AadharVerification
 C:\Users\Vamshi Krishna\source\repos\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\AadharVerification.genruntimeconfig.cache
 C:\Users\Vamshi Krishna\source\repos\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\ref\AadharVerification.dll
 C:\Users\Vamshi Krishna\source\repos\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\appsettings.json
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\AadharVerification.exe
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\AadharVerification.deps.json
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\AadharVerification.runtimeconfig.json
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\AadharVerification.dll
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\AadharVerification.pdb
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\AadharVerification.csproj.AssemblyReference.cache
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\AadharVerification.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\AadharVerification.AssemblyInfoInputs.cache
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\AadharVerification.AssemblyInfo.cs
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\AadharVerification.csproj.CoreCompileInputs.cache
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\AadharVerification.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\AadharVerification.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\staticwebassets\msbuild.AadharVerification.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\staticwebassets\msbuild.build.AadharVerification.props
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.AadharVerification.props
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.AadharVerification.props
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\scopedcss\bundle\AadharVerification.styles.css
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\AadharVerification.csproj.CopyComplete
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\AadharVerification.dll
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\refint\AadharVerification.dll
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\AadharVerification.pdb
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\AadharVerification.genruntimeconfig.cache
+C:\Users\MAHESH\source\repos\AadharAuthentication\AadharAuthentication-API\AadharVerification\obj\Debug\net6.0\ref\AadharVerification.dll
