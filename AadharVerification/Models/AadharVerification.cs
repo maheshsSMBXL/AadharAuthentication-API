@@ -16,5 +16,5 @@
     public class SubmitOtpRequest
     {
         public string aadhaarId { get; set; }
-    }
+    }    
 }
