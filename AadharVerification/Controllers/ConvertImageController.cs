@@ -1,6 +1,7 @@
 ﻿using AadharVerification.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Transactions;
@@ -24,9 +25,8 @@ namespace AadharVerification.Controllers
             return View();
         }
         [HttpPost("ImageToBase64")]
-        public void ImageToBase64(IFormFile file) 
+        public string ImageToBase64(IFormFile file)
         {
-
             if (file.Length > 0)
             {
                 using (var ms = new MemoryStream())
@@ -34,11 +34,13 @@ namespace AadharVerification.Controllers
                     file.CopyTo(ms);
                     byte[] fileByte = ms.ToArray();
                     string Base64 = Convert.ToBase64String(fileByte);
+                    return Base64;
                     // testing
 
                     //hello world.
                 }
-            }                      
+            }
+            return null;
         }
 
         [HttpPost("AadhaarId")]
@@ -46,7 +48,7 @@ namespace AadharVerification.Controllers
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://api.gridlines.io/aadhaar-api/boson/generate-otp");
-            request.Headers.Add("X-API-Key", "LhSjNKH5goyEU0IQkG9mTkSi84NKLJlH");
+            request.Headers.Add("X-API-Key", "B884yJGP8x0yAFUGx72qSEOfmtsUaOUG");
             request.Headers.Add("X-Auth-Type", "API-Key");
             var content = new StringContent($"{{\"aadhaar_number\": \"{input.aadhaarId}\", \"consent\": \"Y\"}}", null, "application/json");
             request.Content = content;
@@ -85,7 +87,7 @@ namespace AadharVerification.Controllers
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://api.gridlines.io/aadhaar-api/boson/submit-otp");
-            request.Headers.Add("X-API-Key", "LhSjNKH5goyEU0IQkG9mTkSi84NKLJlH");
+            request.Headers.Add("X-API-Key", "B884yJGP8x0yAFUGx72qSEOfmtsUaOUG");
             request.Headers.Add("X-Auth-Type", "API-Key");
             request.Headers.Add("X-Transaction-ID", input.TransactionId);
             //var content = new StringContent("{\r\n  \"otp\": 216165,\r\n  \"include_xml\": true,\r\n  \"share_code\": \"1234\"\r\n}", null, "application/json");
@@ -160,7 +162,7 @@ namespace AadharVerification.Controllers
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://api.gridlines.io/face-api/verify");
-            request.Headers.Add("X-API-Key", "LhSjNKH5goyEU0IQkG9mTkSi84NKLJlH");
+            request.Headers.Add("X-API-Key", "B884yJGP8x0yAFUGx72qSEOfmtsUaOUG");
             request.Headers.Add("X-Auth-Type", "API-Key");
             var jsonBody = new
             {
@@ -197,6 +199,78 @@ namespace AadharVerification.Controllers
             Console.WriteLine("Timestamp: " + timestamp);
             Console.WriteLine("Path: " + path);
             return message;
+        }
+
+        [HttpPost("SavePhoto")]
+        public IActionResult SavePhoto([FromForm] FileModel fileModel, [FromServices] IWebHostEnvironment env)
+        {
+            string folderPath = Path.Combine(env.ContentRootPath, "Photos");
+            try
+            {
+                // Ensure the directory exists
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                    Console.WriteLine("Directory created at: " + folderPath);
+                }
+
+                // Create a file path for the uploaded file
+                string filePath = Path.Combine(folderPath, fileModel.file.FileName);
+
+                // Save the file to the specified path
+                using (Stream stream = new FileStream(filePath, FileMode.Create))
+                {
+                    fileModel.file.CopyTo(stream);
+                }
+
+                return Ok(new { message = "Image saved successfully" });
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine("Error: Access to the path is denied. " + ex.Message);
+                return StatusCode(500, "Access to the path is denied.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+                return StatusCode(500, "An error occurred while saving the image.");
+            }
+        }
+        [HttpPost("SaveImage")]
+        public IActionResult SaveImage([FromForm] FileModel fileModel, [FromServices] IWebHostEnvironment env)
+        {
+            string folderPath = @"C:\inetpub\wwwroot\Hosting\AadhaarAuthenticationAPI\Photos";
+
+            try
+            {
+                // Ensure the directory exists
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                    Console.WriteLine("Directory created at: " + folderPath);
+                }
+
+                // Create a file path for the uploaded file
+                string filePath = Path.Combine(folderPath, fileModel.file.FileName);
+
+                // Save the file to the specified path
+                using (Stream stream = new FileStream(filePath, FileMode.Create))
+                {
+                    fileModel.file.CopyTo(stream);
+                }
+
+                return Ok(new { message = "Image saved successfully" });
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine("Error: Access to the path is denied. " + ex.Message);
+                return StatusCode(500, "Access to the path is denied.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+                return StatusCode(500, "An error occurred while saving the image.");
+            }
         }
 
 
