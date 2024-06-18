@@ -16,5 +16,10 @@
     public class SubmitOtpRequest
     {
         public string aadhaarId { get; set; }
-    }    
+    }
+    public class AadhaarOtpResponse
+    {
+        public string? Result { get; set; }
+        public Guid CustomerInfoId { get; set; }
+    }
 }

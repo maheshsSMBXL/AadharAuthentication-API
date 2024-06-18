@@ -1,7 +1,9 @@
-﻿using AadharVerification.Models;
+﻿using AadharVerification.Data;
+using AadharVerification.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Transactions;
@@ -13,9 +15,11 @@ namespace AadharVerification.Controllers
     public class ConvertImageController : Controller
     {
         private readonly HttpClient _httpClient;
+        private readonly AadhaarAuthenticationContext _context;
 
-        public ConvertImageController()
+        public ConvertImageController(AadhaarAuthenticationContext context)
         {
+            _context = context;
             _httpClient = new HttpClient();
             // You can set base address or other configurations for HttpClient here if needed
             // _httpClient.BaseAddress = new Uri("http://your-service-base-url/");
@@ -125,36 +129,54 @@ namespace AadharVerification.Controllers
             string PhotoString = responseData.data.aadhaar_data.photo_base64;
              
             // Do something with the extracted data
-            Console.WriteLine("Request ID: " + requestId);
-            Console.WriteLine("Status: " + status);
-            Console.WriteLine("Code: " + code);
-            Console.WriteLine("Message: " + message);
-            Console.WriteLine("Transaction ID: " + transactionId);
-            Console.WriteLine("Timestamp: " + timestamp);
-            Console.WriteLine("Path: " + path);
+            //Console.WriteLine("Request ID: " + requestId);
+            //Console.WriteLine("Status: " + status);
+            //Console.WriteLine("Code: " + code);
+            //Console.WriteLine("Message: " + message);
+            //Console.WriteLine("Transaction ID: " + transactionId);
+            //Console.WriteLine("Timestamp: " + timestamp);
+            //Console.WriteLine("Path: " + path);
 
-            Console.WriteLine("Document Type: " + documentType);
-            Console.WriteLine("Reference ID: " + referenceId);
-            Console.WriteLine("Name: " + name);
-            Console.WriteLine("Date of Birth: " + dateOfBirth);
-            Console.WriteLine("Gender: " + gender);
-            Console.WriteLine("Mobile: " + mobile);
-            Console.WriteLine("Care Of: " + careOf);
-            Console.WriteLine("House: " + house);
-            Console.WriteLine("Street: " + street);
-            Console.WriteLine("District: " + district);
-            Console.WriteLine("Landmark: " + landmark);
-            Console.WriteLine("Locality: " + locality);
-            Console.WriteLine("Post Office Name: " + postOfficeName);
-            Console.WriteLine("State: " + state);
-            Console.WriteLine("Pincode: " + pincode);
-            Console.WriteLine("Country: " + country);
-            Console.WriteLine("VTC Name: " + vtcName);
-            Console.WriteLine(responseData);
+            //Console.WriteLine("Document Type: " + documentType);
+            //Console.WriteLine("Reference ID: " + referenceId);
+            //Console.WriteLine("Name: " + name);
+            //Console.WriteLine("Date of Birth: " + dateOfBirth);
+            //Console.WriteLine("Gender: " + gender);
+            //Console.WriteLine("Mobile: " + mobile);
+            //Console.WriteLine("Care Of: " + careOf);
+            //Console.WriteLine("House: " + house);
+            //Console.WriteLine("Street: " + street);
+            //Console.WriteLine("District: " + district);
+            //Console.WriteLine("Landmark: " + landmark);
+            //Console.WriteLine("Locality: " + locality);
+            //Console.WriteLine("Post Office Name: " + postOfficeName);
+            //Console.WriteLine("State: " + state);
+            //Console.WriteLine("Pincode: " + pincode);
+            //Console.WriteLine("Country: " + country);
+            //Console.WriteLine("VTC Name: " + vtcName);
+            //Console.WriteLine(responseData);
             var result = await response.Content.ReadAsStringAsync();
             Console.WriteLine(await response.Content.ReadAsStringAsync());
-            return result.ToString();
 
+            var customerInfo = new CustomerInfo 
+            {
+                CustomerId = Guid.NewGuid(),
+                Name = name,
+                DateOfBirth = dateOfBirth,
+                Address = house + "," + street + "," + landmark + "," + postOfficeName,
+                District = district,
+                State = state,
+                PinCode = pincode,
+                Country = country,
+            };
+            _context.CustomerInfo.Add(customerInfo);
+            _context.SaveChanges();
+
+            return result.ToString();
+            //var resultValue = new AadhaarOtpResponse();
+            //resultValue.Result = result;
+            //resultValue.CustomerInfoId = customerInfo.CustomerId;
+            //return Ok(resultValue);
         }
 
         [HttpPost("ImageVerification")]
