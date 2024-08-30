@@ -1,6 +1,7 @@
 ﻿using AadharVerification.Data;
 using AadharVerification.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.IO;
 using System.Net;
@@ -52,7 +53,7 @@ namespace AadharVerification.Controllers
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://api.gridlines.io/aadhaar-api/boson/generate-otp");
-            request.Headers.Add("X-API-Key", "B884yJGP8x0yAFUGx72qSEOfmtsUaOUG");
+            request.Headers.Add("X-API-Key", "UQ01ITtAOwlhafBVm4Var57ZuiaH3YNq");
             request.Headers.Add("X-Auth-Type", "API-Key");
             var content = new StringContent($"{{\"aadhaar_number\": \"{input.aadhaarId}\", \"consent\": \"Y\"}}", null, "application/json");
             request.Content = content;
@@ -91,7 +92,7 @@ namespace AadharVerification.Controllers
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://api.gridlines.io/aadhaar-api/boson/submit-otp");
-            request.Headers.Add("X-API-Key", "B884yJGP8x0yAFUGx72qSEOfmtsUaOUG");
+            request.Headers.Add("X-API-Key", "UQ01ITtAOwlhafBVm4Var57ZuiaH3YNq");
             request.Headers.Add("X-Auth-Type", "API-Key");
             request.Headers.Add("X-Transaction-ID", input.TransactionId);
             //var content = new StringContent("{\r\n  \"otp\": 216165,\r\n  \"include_xml\": true,\r\n  \"share_code\": \"1234\"\r\n}", null, "application/json");
@@ -158,25 +159,35 @@ namespace AadharVerification.Controllers
             var result = await response.Content.ReadAsStringAsync();
             Console.WriteLine(await response.Content.ReadAsStringAsync());
 
-            var customerInfo = new CustomerInfo 
+            return result.ToString();
+        }
+
+        [HttpPost("SaveCustomerInfo")]
+        public async Task<Guid> SaveCustomerInfo([FromBody] CustomerInfo request)
+        {
+            var customerInfo = new CustomerInfo
             {
                 CustomerId = Guid.NewGuid(),
-                Name = name,
-                DateOfBirth = dateOfBirth,
-                Address = house + "," + street + "," + landmark + "," + postOfficeName,
-                District = district,
-                State = state,
-                PinCode = pincode,
-                Country = country,
+                Name = request.Name,
+                DateOfBirth = request.DateOfBirth,
+                Address = request.Address,
+                District = request.District,
+                State = request.State,
+                PinCode = request.PinCode,
+                Country = request.Country,
             };
             _context.CustomerInfo.Add(customerInfo);
             _context.SaveChanges();
+                        
+            return customerInfo.CustomerId;
+        }
 
-            return result.ToString();
-            //var resultValue = new AadhaarOtpResponse();
-            //resultValue.Result = result;
-            //resultValue.CustomerInfoId = customerInfo.CustomerId;
-            //return Ok(resultValue);
+        [HttpPost("GetCustomerInfo")]
+        public async Task<CustomerInfo> GetCustomerInfo([FromBody] Guid CustomerId)
+        {
+            var customerInfo = await _context.CustomerInfo.FirstOrDefaultAsync(a => a.CustomerId == CustomerId);
+
+            return customerInfo;
         }
 
         [HttpPost("ImageVerification")]
@@ -184,7 +195,7 @@ namespace AadharVerification.Controllers
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://api.gridlines.io/face-api/verify");
-            request.Headers.Add("X-API-Key", "B884yJGP8x0yAFUGx72qSEOfmtsUaOUG");
+            request.Headers.Add("X-API-Key", "UQ01ITtAOwlhafBVm4Var57ZuiaH3YNq");
             request.Headers.Add("X-Auth-Type", "API-Key");
             var jsonBody = new
             {
