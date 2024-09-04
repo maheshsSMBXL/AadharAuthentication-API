@@ -53,7 +53,7 @@ namespace AadharVerification.Controllers
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://api.gridlines.io/aadhaar-api/boson/generate-otp");
-            request.Headers.Add("X-API-Key", "UQ01ITtAOwlhafBVm4Var57ZuiaH3YNq");
+            request.Headers.Add("X-API-Key", "U1JOhpdNm3wHXwMywtgJu6biFGZTRu0W");
             request.Headers.Add("X-Auth-Type", "API-Key");
             var content = new StringContent($"{{\"aadhaar_number\": \"{input.aadhaarId}\", \"consent\": \"Y\"}}", null, "application/json");
             request.Content = content;
@@ -92,7 +92,7 @@ namespace AadharVerification.Controllers
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://api.gridlines.io/aadhaar-api/boson/submit-otp");
-            request.Headers.Add("X-API-Key", "UQ01ITtAOwlhafBVm4Var57ZuiaH3YNq");
+            request.Headers.Add("X-API-Key", "U1JOhpdNm3wHXwMywtgJu6biFGZTRu0W");
             request.Headers.Add("X-Auth-Type", "API-Key");
             request.Headers.Add("X-Transaction-ID", input.TransactionId);
             //var content = new StringContent("{\r\n  \"otp\": 216165,\r\n  \"include_xml\": true,\r\n  \"share_code\": \"1234\"\r\n}", null, "application/json");
@@ -195,7 +195,7 @@ namespace AadharVerification.Controllers
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://api.gridlines.io/face-api/verify");
-            request.Headers.Add("X-API-Key", "UQ01ITtAOwlhafBVm4Var57ZuiaH3YNq");
+            request.Headers.Add("X-API-Key", "U1JOhpdNm3wHXwMywtgJu6biFGZTRu0W");
             request.Headers.Add("X-Auth-Type", "API-Key");
             var jsonBody = new
             {
