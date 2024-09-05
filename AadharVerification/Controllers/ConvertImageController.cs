@@ -261,7 +261,7 @@ namespace AadharVerification.Controllers
             catch (UnauthorizedAccessException ex)
             {
                 Console.WriteLine("Error: Access to the path is denied. " + ex.Message);
-                return StatusCode(500, "Access to the path is denied.");
+                return StatusCode(500, "Access to the path is denied." + folderPath);
             }
             catch (Exception ex)
             {
@@ -272,7 +272,7 @@ namespace AadharVerification.Controllers
         [HttpPost("SaveImage")]
         public IActionResult SaveImage([FromForm] FileModel fileModel, [FromServices] IWebHostEnvironment env)
         {
-            string folderPath = @"C:\inetpub\wwwroot\Hosting\AadhaarAuthenticationAPI\Photos";
+            string folderPath = @"C:\inetpub\wwwroot\HospitalityApi\Photos";
 
             try
             {
