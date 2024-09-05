@@ -57,6 +57,31 @@ namespace AadharVerification.Controllers
             }
 
             return Ok(new { Status = "Success", Data = hotels });
+        }        
+        [HttpGet]
+        [Route("GetHotelsInCity/{cityName}")]
+        public async Task<IActionResult> GetHotelsInCity(string cityName)
+        {
+            List<Hotels> topTwoHotels = new List<Hotels>();
+            List<Hotels> remainingHotels = new List<Hotels>();
+
+            topTwoHotels = await _context.Hotels
+                                .Where(h => h.City == cityName)
+                                .OrderByDescending(h => h.Rating)
+                                .Take(2)
+                                .ToListAsync();
+
+            remainingHotels = await _context.Hotels
+                                   .Where(h => h.City == cityName && !topTwoHotels.Select(th => th.HotelId).Contains(h.HotelId))
+                                   .ToListAsync();
+            var result = new
+            {
+                Status = "Success",
+                FeaturedHotels = topTwoHotels,
+                SimilarHotels = remainingHotels
+            };
+
+            return Ok(result);
         }
     }
 }
