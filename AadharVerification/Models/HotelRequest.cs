@@ -17,5 +17,6 @@
         public double? Discount { get; set; }
         public bool? RoomAvailability { get; set; }
         public IFormFile? Image { get; set; }
+        public string? Description { get; set; }
     }
 }

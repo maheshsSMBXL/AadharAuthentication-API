@@ -21,5 +21,6 @@ namespace AadharVerification.Data
         public double? Discount { get; set; }
         public bool? RoomAvailability { get; set; }
         public string? Photo { get; set; }
+        public string? Description { get; set; }
     }
 }

@@ -85,7 +85,8 @@ namespace AadharVerification.Controllers
                 MinimumPrice = request.MinimumPrice,
                 Discount = request.Discount,
                 RoomAvailability = request.RoomAvailability,
-                Photo = request.Image.FileName
+                Photo = request.Image.FileName,
+                Description = request.Description,
             };
 
             await _context.Hotels.AddAsync(hotel);
@@ -98,11 +99,6 @@ namespace AadharVerification.Controllers
         public async Task<IActionResult> GetAllHotels()
         {
             var hotels = await _context.Hotels.ToListAsync();
-
-            if (hotels == null || !hotels.Any())
-            {
-                return NotFound(new { Status = "Error", Message = "No hotels found." });
-            }
 
             return Ok(new { Status = "Success", Data = hotels });
         }        

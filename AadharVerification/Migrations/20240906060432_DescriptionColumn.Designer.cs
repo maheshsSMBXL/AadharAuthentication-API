@@ -4,6 +4,7 @@ using AadharVerification.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AadharVerification.Migrations
 {
     [DbContext(typeof(AadhaarAuthenticationContext))]
-    partial class AadhaarAuthenticationContextModelSnapshot : ModelSnapshot
+    [Migration("20240906060432_DescriptionColumn")]
+    partial class DescriptionColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
