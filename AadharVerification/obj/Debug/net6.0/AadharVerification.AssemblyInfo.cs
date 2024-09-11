@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AadharVerification")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f5456859290991b1dda3a990d55d295e1a3d879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a876c5d8fe805301015135769d9d43d097097e64")]
 [assembly: System.Reflection.AssemblyProductAttribute("AadharVerification")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AadharVerification")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
